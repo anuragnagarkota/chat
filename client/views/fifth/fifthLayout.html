@@ -1,0 +1,26 @@
+<template name='fifthLayout'>
+    <div class='container-fluid' style='height:100%'>
+        <div class='row secondWrap'>
+            <div class="col-xs-12 header">
+                {{> fourthHeader}}
+            </div>
+        </div>
+    </div>
+</template>
+<template name='fourthHeader'>
+    <div class="col-xs-2 text-left">
+        <a class="back"><i class="fa fa-arrow-left fa-2x"></i></a>
+    </div>
+    <div class='col-xs-10 text-center'>
+        <form class='form-horizontal box-shadow'>
+            <div class="input-group">
+                <input type="text" class="form-control typeahead input-search"  autocomplete="off" spellcheck="off" data-source="emails" placeholder="Type Email..." style='border:none; box-shadow:none;'>
+                <span class="input-group-btn">
+                <button class="btn btn-sm check findThisGuy" type="submit" style='background:#fff'>
+                    <i class="fa fa-check-circle fa-2x" style='color:#333333;'></i>
+                </button>
+            </span>
+            </div>
+        </form>
+    </div>
+</template>

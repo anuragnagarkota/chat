@@ -1,0 +1,67 @@
+<template name="firstLayout">
+    <div class='container-fluid' style='height:100%'>
+        <div class='row secondWrap'>
+            <div class="col-xs-12 header">
+                {{> firstHeader}}
+            </div>
+            {{#if isLoaded}}
+            <div class='col-xs-12 connects'>
+                {{> yield}}
+            </div>
+            {{else}}
+            <div class="col-xs-2 col-xs-offset-6" style='position:absolute; top:50%'>
+                {{> spinner}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</template>
+<template name="firstHeader">
+    <div class="col-xs-2 text-left">
+        <a class='aboutMe'>
+            <i class="fa fa-bars fa-2x"></i>
+        </a>
+    </div>
+    <div class="col-xs-6 text-left">
+        <!--         <p style='color:#333333; font-size:14px; padding-top:2px;'>Hi <em>{{currentUser}}, Welcome</em> Back</p> -->
+        <!-- <p style='color:#333333; font-size:14px; padding-top:2px;'>Shriman {{currentUser}}, Aapka Swagat Hai</p> -->
+        <!-- <p style='color:#333333; font-size:14px; padding-top:2px;'>Welcome Back, Mr. {{currentUser}}</p> -->
+        <p style='color:#333333; font-size:14px; padding-top:2px;'><em>W B</em>, Mr. {{currentUser}}</p>
+    </div>
+    <div class="col-xs-2 text-left">
+        <a class='searchUser'>
+            <i class="fa fa-search fa-2x"></i>
+        </a>
+    </div>
+    <div class="col-xs-2 text-right">
+        <a class='filterUser'>
+            <i class="fa fa-filter fa-2x"></i>
+        </a>
+    </div>
+</template>
+<template name="connects">
+    {{#with Connects}} {{#each Connects}}
+    <div class="col-xs-10 col-sm-11 col-md-12 transbox connectName box-shadow">
+        <a>{{username}}: <small>{{email}}</small></a>
+        <a class='remove text-right' href="">
+            <i class="fa fa-trash-o"></i>
+        </a>
+    </div>
+    {{/each}} {{else}}
+    <!--     <div class="col-xs-12 text-center" style='padding-top:10px;'>
+<div class="col-xs-12 transbox" style='background:#ffffff;padding-top:10px;padding-bottom: 10px;'>
+    <p style='color:#333333; background:#fff;'> You don't have any connection at this moment.</p>
+    <p style='color:#333333; background:#fff;'> Sorry, we couldn't find any connection of yours.</p>
+    <p style='color:#333333; background:#fff;'> Maaf Kijiye, Hame Aapke Kisi Bhi Vyakti Se Sambandh Prapt Nahin Hue Hain.</p>
+    <p style='color:#333333; background:#fff;'>Your connections list is empty at the moment.</p>
+    <em>Your connections list is empty at the moment.</em>
+    <em>You don't have any connection at this moment.</em>
+</div> -->
+    <!-- <div class="col-xs-12 text-center" style='padding-top:25px;'> -->
+        <div class="col-xs-12 text-center">
+
+        <p style='color:#333333; background:#fff; word-wrap: break-word;'> You don't have any connection at this moment.</p>
+        <!-- <em>You don't have any connection at this moment.</em> -->
+    </div>
+    {{/with}}
+</template>

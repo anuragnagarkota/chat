@@ -1,0 +1,75 @@
+<template name='fourthLayout'>
+    <div class='container-fluid' style='height:100%'>
+        <div class='row secondWrap'>
+            <div class='col-xs-12 header thirdHeader'>
+                {{> thirdHeader}}
+            </div>
+            {{#if isLoaded2}}
+            <!--             <div class='messageList col-xs-12'>
+                {{> yield}}
+            </div> -->
+            {{> yield}} {{else}}
+            <div class="col-xs-2 col-xs-offset-6" style='position:absolute; top:50%'>
+                {{> spinner}}
+            </div>
+            {{/if}}
+            <!--             <div class='secondFooter col-xs-12'>
+                {{> secondFooter}}
+            </div> -->
+        </div>
+    </div>
+</template>
+<template name="thirdHeader">
+    <div class="col-xs-2 text-left">
+        <!-- <a href="" class='back'><i class="fa fa-arrow-left fa-2x" style='color:#fff'></i></a> -->
+        <a href="" class='back'><i class="fa fa-arrow-left fa-2x"></i></a>
+    </div>
+    <div class="col-xs-8 text-center" style='color:rgb(66, 133, 244);'>
+        {{connectedGuy}} {{#if matched}} is typing... {{/if}}
+    </div>
+    <div class="col-xs-2 text-right">
+        <a class='aboutUser'>
+            <!-- <i class="fa fa-info-circle fa-2x" style='color:#fff'></i> -->
+            <i class="fa fa-info-circle fa-2x"></i>
+        </a>
+    </div>
+</template>
+<template name='messageList'>
+    <div class='messageBox'>
+        <div class='messageList col-xs-12'>
+            {{#each Messages}}
+            <div class='col-xs-12'>
+                <div class='col-xs-11 col-xs-offset-{{offset1}} col-sm-8 col-sm-offset-{{offset2}} col-md-6 col-md-offset-{{offset3}}' style='margin-bottom:10px;'>
+                    <div class="{{message}} box-shadow">
+                        <div style='text-align: left;padding-top:5px; padding-left:5px;'>{{text}}</div>
+                        <div style='font-size:10px; text-align: right;'>{{tdate}} {{#if currentUser}}
+                            <i class="fa fa-flag" style="color:{{state}};"></i> {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class='inputBox col-xs-12'>
+            <div class='col-xs-11 col-xs-offset-1 col-sm-8 col-sm-offset-4 col-md-6 col-md-offset-6' style='margin-bottom:10px;'>
+                <form class='form-horizontal'>
+                    <div class="message1 box-shadow">
+                        <input type="text" class="form-control input-box_text" placeholder="Type Message" style='height:38px; border:none;'>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
+<!-- <template name='secondFooter'>
+    <div class='col-xs-12'>
+        <div class='col-xs-11 col-xs-offset-1 col-sm-8 col-sm-offset-4 col-md-6 col-md-offset-6'>
+            <form class='form-horizontal'>
+                <div class="message1 box-shadow">
+                    <input type="text" class="form-control input-box_text" placeholder="Type Message" style='height:38px; border:none;'>
+                </div>
+            </form>
+        </div>
+    </div>
+</template>
+ -->

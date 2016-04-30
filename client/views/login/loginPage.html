@@ -1,0 +1,46 @@
+<template name="loginPage">
+    {{#if isSigning}}
+    <div class="col-xs-2 col-xs-offset-6" style='position:absolute; top:50%'>
+        {{> spinner}}
+    </div>
+    {{/if}}
+    <div class='container loginPage' style='height:100vh'>
+        <form class="form-horizontal loginForm" autocomplete="off">
+            <div class="form-group">
+                <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                    <input type="email" class="form-control input-lg" id="inputEmail3" name="email" placeholder="Your email" style='border-bottom:2px solid #fff; border-radius:0px; padding-left:0px'>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                    <input type="password" class="form-control input-lg" id="inputPassword3" name="passkey" placeholder="Your password" style='border-bottom:2px solid #fff; border-radius:0px;  padding-left:0px'>
+                </div>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                <center>
+                    <button class="btn btn-default signIn" style='background: none; border:none;' type='submit'>
+                        <i class="fa fa-sign-in fa-2x" style='color:#fff'></i>
+                    </button>
+                </center>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                <center>
+                    {{> yield}}
+                </center>
+            </div>
+        </form>
+        <!--         <div class="page-title col-xs-12 text-center">
+            Soothr <small style="font-family: 'RobotoDraft'; font-style: italic; font-size:18px;">B’cos, to err is human</small>
+        </div> -->
+        <div class="page-title col-xs-12 text-center">
+            <!-- a Live Contact App<small style="font-family: 'RobotoDraft'; font-style: italic; font-size:18px;">Arriving Somewhere But Not Here</small> -->
+            Reso Live 
+        </div>
+    </div>
+</template>
+<template name="freshPage">
+    <p style="font-weight: 600; color: rgba(255, 255, 255, 0.85);"></p>
+</template>
+<template name="accessDenied">
+    <p style="font-weight: 600; color: rgba(255, 255, 255, 0.85); font-family: 'RobotoDraft'; font-weight: 400; font-style: italic;"> * Please login with correct credentials.</p>
+</template>

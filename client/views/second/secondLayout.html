@@ -1,0 +1,48 @@
+<template name="secondLayout">
+    <div class='container-fluid' style='height:100%'>
+        <div class='row secondWrap'>
+            <div class="col-xs-12 header">
+                {{> secondHeader}}
+            </div>
+            {{> yield}}
+        </div>
+    </div>
+</template>
+<template name='secondHeader'>
+    <div class="col-xs-2 text-left">
+        <a class="back" href=""><i class="fa fa-arrow-left fa-2x"></i></a>
+    </div>
+    <div class="col-xs-8 text-left">
+        <p style='color:#333333; font-size:14px; padding-top:2px'><em>{{field}}</em></p>
+    </div>
+    <div class="col-xs-2 text-right">
+        <i class="fa fa-{{icon}} fa-2x"></i>
+    </div>
+</template>
+<template name='cities'>
+    <div id='cityList' class="col-xs-12">
+        {{#each Cities}}
+        <div class="col-xs-12 transbox selectCity box-shadow">
+            <a>{{this}}</a>
+        </div>
+        {{/each}}
+    </div>
+</template>
+<template name='deps'>
+    <div id='depList' class="col-xs-12">
+        {{#each Deps}}
+        <div class="col-xs-12 transbox selectDep box-shadow">
+            <a>{{this}}</a>
+        </div>
+        {{/each}}
+    </div>
+</template>
+<template name='people'>
+    <div id='peopleList' class="col-xs-12">
+        {{#each People}}
+        <div class="col-xs-12 transbox selectGuy box-shadow">
+            <a>{{this}}</a>
+        </div>
+        {{/each}}
+    </div>
+</template>
